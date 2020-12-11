@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<body> 
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  
+  /*the container must be positioned relative:*/
+  .autocomplete {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  
+  .autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff; 
+    border-bottom: 1px solid #d4d4d4; 
+  }
+  
+  /*when hovering an item:*/
+  .autocomplete-items div:hover {
+    background-color: #e9e9e9; 
+  }
+  
+  /*when navigating through the items using the arrow keys:*/
+  .autocomplete-active {
+    background-color: DodgerBlue !important; 
+    color: #ffffff; 
+  }
+  </style>
+<base href="/">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  body {background-color: #91C8F6}
+  fieldset{border:2px solid #240202;margin:0 2px;padding:.35em .625em .75em}
+</style>
+<h1>ASAP</h1>
+<h2><i>A Simple Alternative Path</i></h2>
+
+<p id="demo">Change the way you navigate through forms!</p><br>
+<p>This is another model trained based off of a different context.<br/>The aim is to outline how training can influence where ASAP will predict a user can go depending on context.</p>
+
+
+<script>
+function loadDoc() {
+  var xhttp;
+  if (window.XMLHttpRequest) {
+    // code for modern browsers
+    xhttp = new XMLHttpRequest();
+    } else {
+    // code for IE6, IE5
+    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "ajax_info.txt", true);
+  xhttp.send();
+  alert('Hello!');
+}
+</script>
+
+<form autocomplete="off">
+  <fieldset>
+  <legend>Personal Details</legend>
+    <div>  
+      <label for="fname">First name:</label>
+      <label style="margin-left: 8.25em;" for="lname">Last name:</label>
+    </div>
+
+    <div>
+      <div class="autocomplete">
+        <input id=1 type="text" id="fname" name="fname" value="">
+      </div>
+
+      <div class="autocomplete">
+      <input id=2 type="text" id="lname" name="lname" value="">
+      </div>
+    </div>
+
+    <div>
+      <label for="lname">Billing Address:</label>
+      <label style="margin-left: 6.2em" for="lname">Shipping Address:</label>
+    </div>
+    
+    <div>
+      <div class="autocomplete">
+        <input id=3 type="text" id="lname" name="lname" value="">
+      </div>
+
+      <div class="autocomplete">
+        <input id=4 type="text" id="lname" name="lname" value="">
+      </div>
+    </div>
+
+    <div>
+      <label for="lname">Other:</label>
+      <label style="margin-left: 10.7em" for="lname">Store Name:</label>
+    </div>
+    
+    <div>
+      <div class="autocomplete">
+        <input id=5 type="text" id="lname" name="lname" value="">
+      </div>
+      <div class="autocomplete">
+        <input id=6 type="text" id="lname" name="lname" value="">
+      </div>
+    </div>
+
+    <div>
+      <label for="lname">Store Number:</label>
+      <label style="margin-left: 6.6em" for="lname">State:</label>
+    </div>
+
+    <div>
+      <div class="autocomplete">
+        <input id=7 type="text" id="lname" name="lname" value="">
+      </div>
+      <div class="autocomplete">
+        <input id=8 type="text" id="lname" name="lname" value="">
+      </div>
+    </div>
+
+    <label for="lname">Country:</label><br>
+    <div class="autocomplete">
+      <input id=9 type="text" id="lname" name="lname" value=""><br><br>
+    </div>
+  </fieldset>
+
+  <br>
+
+  <fieldset>
+    <legend>Real Estate Details</legend>
+      <div>  
+        <label for="fname">Amount Due:</label>
+        <label style="margin-left: 7.25em;" for="lname">Due Date:</label>
+      </div>
+  
+      <div>
+        <div class="autocomplete">
+          <input id=10 type="text" id="fname" name="fname" value="">
+        </div>
+  
+        <div class="autocomplete">
+        <input id=11 type="text" id="lname" name="lname" value="">
+        </div>
+      </div>
+  
+      <div>
+        <label for="lname">Lease Date:</label>
+        <label style="margin-left: 7.9em" for="lname">Termination Date:</label>
+      </div>
+      
+      <div>
+        <div class="autocomplete">
+          <input id=12 type="text" id="lname" name="lname" value="">
+        </div>
+  
+        <div class="autocomplete">
+          <input id=13 type="text" id="lname" name="lname" value="">
+        </div>
+      </div>
+  
+      <div>
+        <label for="lname">Vacancy Start Date:</label>
+        <label style="margin-left: 4em" for="lname">Vacancy End Date:</label>
+      </div>
+      
+      <div>
+        <div class="autocomplete">
+          <input id=14 type="text" id="lname" name="lname" value="">
+        </div>
+        <div class="autocomplete">
+          <input id=15 type="text" id="lname" name="lname" value="">
+        </div>
+      </div>
+  
+      <div>
+        <label for="lname">Submission Date:</label>
+        <label style="margin-left: 5.2em" for="lname">Compliance Due Date:</label>
+      </div>
+  
+      <div>
+        <div class="autocomplete">
+          <input id=16 type="text" id="lname" name="lname" value="">
+        </div>
+        <div class="autocomplete">
+          <input id=17 type="text" id="lname" name="lname" value="">
+        </div>
+      </div>
+    </fieldset>
+  <input id=18 type="submit" value="Submit">
+  </form>
+
+</body>
+
+<script>
+    //document.getElementById('n1').focus();
+</script>
+
+<script src="https://unpkg.com/js-markov/dist/markov.js"></script>
+<script>
+  var markov = new Markov('numeric');
+
+  // Add some states
+  markov.addStates([
+    {
+      state: 1,
+      predictions: [2]
+    },
+    {
+      state: 2,
+      predictions: [4, 5]
+    },
+    {
+      state: 3,
+      predictions: [4, 5, 6]
+    },
+    {
+      state: 4,
+      predictions: [8]
+    },
+    {
+      state: 5,
+      predictions: [6, 8]
+    },
+    {
+      state: 6,
+      predictions: [8, 9]
+    },
+    {
+      state: 7,
+      predictions: [8, 9, 10]
+    },
+    {
+      state: 8,
+      predictions: [9]
+    },
+    {
+      state: 9,
+      predictions: [10]
+    },
+    {
+      state: 10,
+      predictions: [11]
+    },
+    {
+      state: 11,
+      predictions: [16]
+    },
+    {
+      state: 12,
+      predictions: [13]
+    },
+    {
+      state: 13,
+      predictions: [14, 15]
+    },
+    {
+      state: 14,
+      predictions: [15]
+    },
+    {
+      state: 15,
+      predictions: [16, 17]
+    },
+    {
+      state: 16,
+      predictions: [17]
+    },
+    {
+      state: 17,
+      predictions: [18]
+    },
+    {
+      state: 18,
+      predictions: [1, 2]
+    }
+  ]);
+  // "Train" the Markov Chain
+  markov.train();
+  //console.log(markov.getPossibilities(1));
+
+    function predict_next(element) {
+        // "Predict" next value
+        var txt = markov.predict(element);
+        //var txt = markov.generateRandom();
+        console.log(txt);
+        
+        return txt;
+    }
+</script>
+
+<span class="likes">
+  Thumb
+  <ul>
+      <li><a href="foo">foo<a></li>
+      <li><a href="bar">bar<a></li>
+  </ul>
+</span>
+
+<form autocomplete="off">
+  <div class="autocomplete" style="width:300px;">
+    <input id="myInput" type="text" name="myCountry" placeholder="Country">
+  </div>
+  <input type="submit">
+</form>
+
+<script>
+    const masterList = ["First Name", "Last Name", "Billing Address", "Shipping Address", "Other", "Store Name", "Store Number", "State", "Country",
+                        "Amount Due", "Due Date", "Lease Date", "Termination Date", "Vacancy Start Date", "Vacancy End Date", "Submission Date", "Compliance Due Date"];
+
+    function IDtoElement(arr) {
+    const newArr = [];
+    for (x of arr) {
+      newArr.push(masterList[x-1]);
+    }
+    return newArr;
+  }
+
+  function elementToID(val){
+    return masterList.indexOf(val) + 1;
+  }
+
+  function autocomplete(inp, arr) {
+    /*the autocomplete function takes two arguments,
+    the text field element and an array of possible autocompleted values:*/
+    var currentFocus;
+    /*execute a function when someone writes in the text field:*/
+    inp.addEventListener("input", function(e) {
+        var a, b, i, val = this.value;
+        /*close any already open lists of autocompleted values*/
+        closeAllLists();
+        if (!val) { return false;}
+        currentFocus = -1;
+        /*create a DIV element that will contain the items (values):*/
+        a = document.createElement("DIV");
+        a.setAttribute("id", this.id + "autocomplete-list");
+        a.setAttribute("class", "autocomplete-items");
+        /*append the DIV element as a child of the autocomplete container:*/
+        this.parentNode.appendChild(a);
+        /*for each item in the array...*/
+        for (i = 0; i < arr.length; i++) {
+            /*create a DIV element for each matching element:*/
+            b = document.createElement("DIV");
+            b.innerHTML = arr[i].substr(0, val.length);
+            b.innerHTML += arr[i].substr(val.length);
+
+            /*insert a input field that will hold the current array item's value:*/
+            b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+
+            /*execute a function when someone clicks on the item value (DIV element):*/
+            b.addEventListener("click", function(e) {
+                console.log(this.getElementsByTagName("input")[0].value);
+                //convert here
+                const next_elem = this.getElementsByTagName("input")[0].value;
+                const next_id = elementToID(next_elem);
+                document.getElementById(next_id).focus();
+
+                /*close the list of autocompleted values,
+                (or any other open lists of autocompleted values:*/
+                closeAllLists();
+            });
+            a.appendChild(b);
+          //}
+        }
+    });
+    /*execute a function presses a key on the keyboard:*/
+    inp.addEventListener("keydown", function(e) {
+        var x = document.getElementById(this.id + "autocomplete-list");
+        if (x) x = x.getElementsByTagName("div");
+        if (e.keyCode == 40) {
+          /*If the arrow DOWN key is pressed,
+          increase the currentFocus variable:*/
+          currentFocus++;
+          /*and and make the current item more visible:*/
+          addActive(x);
+        } else if (e.keyCode == 38) { //up
+          /*If the arrow UP key is pressed,
+          decrease the currentFocus variable:*/
+          currentFocus--;
+          /*and and make the current item more visible:*/
+          addActive(x);
+        } else if (e.keyCode == 13) {
+          /*If the ENTER key is pressed, prevent the form from being submitted,*/
+          e.preventDefault();
+          if (currentFocus > -1) {
+            /*and simulate a click on the "active" item:*/
+            if (x) x[currentFocus].click();
+          }
+        }
+    });
+
+    function addActive(x) {
+      /*a function to classify an item as "active":*/
+      if (!x) return false;
+      /*start by removing the "active" class on all items:*/
+      removeActive(x);
+      if (currentFocus >= x.length) currentFocus = 0;
+      if (currentFocus < 0) currentFocus = (x.length - 1);
+      /*add class "autocomplete-active":*/
+      x[currentFocus].classList.add("autocomplete-active");
+    }
+    function removeActive(x) {
+      /*a function to remove the "active" class from all autocomplete items:*/
+      for (var i = 0; i < x.length; i++) {
+        x[i].classList.remove("autocomplete-active");
+      }
+    }
+    function closeAllLists(elmnt) {
+      /*close all autocomplete lists in the document,
+      except the one passed as an argument:*/
+      var x = document.getElementsByClassName("autocomplete-items");
+      for (var i = 0; i < x.length; i++) {
+        if (elmnt != x[i] && elmnt != inp) {
+          x[i].parentNode.removeChild(x[i]);
+        }
+      }
+    }
+    /*execute a function when someone clicks in the document:*/
+    document.addEventListener("click", function (e) {
+        closeAllLists(e.target);
+    });
+  }
+
+  /*Stringified array of markov possibilities*/
+  var c1 = markov.getPossibilities(1).map(String);
+  var c2 = markov.getPossibilities(2).map(String);
+  var c3 = markov.getPossibilities(3).map(String);
+  var c4 = markov.getPossibilities(4).map(String);
+  var c5 = markov.getPossibilities(5).map(String);
+  var c6 = markov.getPossibilities(6).map(String);
+  var c7 = markov.getPossibilities(7).map(String);
+  var c8 = markov.getPossibilities(8).map(String);
+  var c9 = markov.getPossibilities(9).map(String);
+  var c10 = markov.getPossibilities(10).map(String);
+  var c11 = markov.getPossibilities(11).map(String);
+  var c12 = markov.getPossibilities(12).map(String);
+  var c13 = markov.getPossibilities(13).map(String);
+  var c14 = markov.getPossibilities(14).map(String);
+  var c15 = markov.getPossibilities(15).map(String);
+  var c16 = markov.getPossibilities(16).map(String);
+  var c17 = markov.getPossibilities(17).map(String);
+
+  console.log(c2)
+  /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+  autocomplete(document.getElementById("1"), IDtoElement(c1));
+  autocomplete(document.getElementById("2"), IDtoElement(c2));
+  autocomplete(document.getElementById("3"), IDtoElement(c3));
+  autocomplete(document.getElementById("4"), IDtoElement(c4));
+  autocomplete(document.getElementById("5"), IDtoElement(c5));
+  autocomplete(document.getElementById("6"), IDtoElement(c6));
+  autocomplete(document.getElementById("7"), IDtoElement(c7));
+  autocomplete(document.getElementById("8"), IDtoElement(c8));
+  autocomplete(document.getElementById("9"), IDtoElement(c9));
+  autocomplete(document.getElementById("10"), IDtoElement(c10));
+  autocomplete(document.getElementById("11"), IDtoElement(c11));
+  autocomplete(document.getElementById("12"), IDtoElement(c12));
+  autocomplete(document.getElementById("13"), IDtoElement(c13));
+  autocomplete(document.getElementById("14"), IDtoElement(c14));
+  autocomplete(document.getElementById("15"), IDtoElement(c15));
+  autocomplete(document.getElementById("16"), IDtoElement(c16));
+  autocomplete(document.getElementById("17"), IDtoElement(c17));
+
+  var map = {}; 
+    onkeydown = onkeyup = function(e){
+        e = e || event;
+        map[e.keyCode] = e.type == 'keydown';
+        if(map[17] && map[32]) { //CTRL+SPACE
+            console.log(map[17], map[32]);
+            console.log(this.document.activeElement.id);
+            var currElement = this.document.activeElement.id;
+            //closeAllLists();
+            document.getElementById(predict_next(currElement)).focus();
+        }
+    }
+  </script>
+</html>
+

@@ -1,0 +1,91 @@
+            'Today is sunny',
+            'Today is rainy',
+            'The weather is sunny',
+            'The weather for today is sunny',
+            'The weather for tomorrow might be rainy',
+            'The weather for next week is cloudy',
+            'Today is cloudy'
+
+
+c01c02c03c04c05c08c09
+c01c02c03c04c05c06c09
+c01c02c03c04c05c08c09
+c01c02c03c04c05c06c09
+c01c03c04c05c06c08c09
+c01c02c04c05c07c06c09
+c03c04c06c07c08c09c10
+c01c02c03c04c05c06c09
+c03c04c05c06c07c08c09
+c03c04c05c06c07c08c09
+c03c04c05c06c07c09c10
+c01c02c03c04c05c06c09
+c01c02c03c04c05c06c09
+
+
+markov.addStates([
+  {
+    state: 1,
+    predictions: [2]
+  },
+  {
+    state: 2,
+    predictions: [3, 4]
+  },
+  {
+    state: 3,
+    predictions: [4, 5, 6]
+  }
+  {
+    state: 4,
+    predictions: [5, 6, 7]
+  }
+  {
+    state: 5,
+    predictions: [6, 8]
+  }
+  {
+    state: 6,
+    predictions: [8, 9]
+  }
+  {
+    state: 7,
+    predictions: [8, 9, 10]
+  }
+  {
+    state: 8,
+    predictions: [9, 6]
+  }
+  {
+    state: 9,
+    predictions: [10]
+  }
+  {
+    state: 10,
+    predictions: [1, 2]
+  }
+]);
+
+
+
+<link rel="stylesheet" type="text/css" href="HTML/formstyle/css/style.css">
+
+
+    var map = {}; 
+    onkeydown = onkeyup = function(e){
+        e = e || event;
+        map[e.keyCode] = e.type == 'keydown';
+        if(map[17] && map[32]) { //CTRL+SPACE
+
+        }
+    }
+
+
+First Name : 1
+Last Name : 2
+Billing Address : 3
+Shipping Address : 4
+Other : 5
+Store Name : 6
+Store Number : 7
+State : 8
+Country : 9
